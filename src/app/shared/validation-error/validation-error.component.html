@@ -1,0 +1,7 @@
+@if (errorMessage$ | async; as errorMessage) {
+    <ng-container>
+        <div class="error-message">
+          <mat-error><mat-icon>error</mat-icon>{{errorMessage}}</mat-error>
+        </div>
+    </ng-container>
+  }

@@ -1,0 +1,35 @@
+@if(fields) {
+
+<h3 class="form-subtitle">Custom Form Builder</h3>
+<div class="container">
+  <form class="custom-form" [formGroup]="form" (ngSubmit)="submit()">
+    @for (control of form.controls | keyvalue; track $index) {
+        @if (fields.inputs && fields.inputs.length > 0 && inputConfigs[control.key] ) {
+            <app-generic-input
+            [formControlName]="control.key"
+            [config]="inputConfigs[control.key]"
+            [control]="control.value"
+            ></app-generic-input>
+        }
+
+        @if (fields.selects && fields.selects.length > 0 && selectConfigs[control.key]) {
+            <app-generic-select
+            [formControlName]="control.key"
+            [config]="selectConfigs[control.key]"
+            [control]="control.value"
+            ></app-generic-select>
+        }
+
+        @if (fields.checkboxes && fields.checkboxes.length > 0 && checkboxConfigs[control.key]) {
+          <app-generic-checkbox
+          [formControlName]="control.key"
+          [config]="checkboxConfigs[control.key]"
+          [control]="control.value"
+          ></app-generic-checkbox>
+      }
+    }
+
+    <button type="submit" class="submit-button">Submit</button>
+  </form>
+</div>
+}

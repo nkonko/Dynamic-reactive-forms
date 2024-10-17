@@ -1,0 +1,21 @@
+@if(control && config) {
+      <mat-form-field appearance="outline" class="custom-input-field">
+        <mat-label>{{ config.base.label }}</mat-label>
+        <input
+          matInput
+          #input
+          class="mat-input-element"
+          [type]="config.base.type"
+          [value]="value"
+          (input)="onInputChange($event.target!)"
+          [disabled]="config.base.disabled"
+          [readonly]="config.base.readOnly"
+          (blur)="onBlur()"
+        />
+  
+        @if (control && control.invalid && (!control.untouched || !control.pristine)) {
+          <app-validation-error class="error-message" [control]="control"></app-validation-error>
+        }
+      </mat-form-field>
+  }
+  

@@ -1,0 +1,13 @@
+@if(control && config) {
+      <mat-checkbox
+      [checked]="value"
+      (change)="toggleCheckbox($event)"
+      [disabled]="isDisabled"
+      
+      >
+      <mat-label>{{ config.base.label }}</mat-label>
+      </mat-checkbox>
+      @if (control && control.invalid && (!control.untouched || !control.pristine)) {
+        <app-validation-error class="error-message" [control]="control"></app-validation-error>
+      }
+    }

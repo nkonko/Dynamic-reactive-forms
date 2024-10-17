@@ -1,0 +1,72 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+  
+  .form-title {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .form-subtitle {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+  }
+  
+  .custom-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    width: 100%;
+    max-width: 400px; /* Limita el tamaño máximo del formulario */
+  }
+  
+  .input-container {
+    width: 100%;
+  }
+  
+  .custom-input-field {
+    width: 100%;
+  }
+  
+  .mat-input-element {
+    border-radius: 10px !important;
+  }
+  
+  .submit-button {
+    background-color: #00aaff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #0088cc;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+  }
+  

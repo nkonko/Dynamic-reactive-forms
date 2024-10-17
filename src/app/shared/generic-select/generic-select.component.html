@@ -1,0 +1,17 @@
+@if(control && config) {
+<mat-form-field>
+  <mat-label>{{ config.base.label }}</mat-label>
+  <mat-select
+    [value]="value"
+    (selectionChange)="onSelectChange($event.value)"
+    [disabled]="isDisabled"
+  >
+    <mat-option *ngFor="let option of config.options" [value]="option.value">
+      {{ option.label }}
+    </mat-option>
+  </mat-select>
+  @if (control && control.invalid && (!control.untouched || !control.pristine)) {
+    <app-validation-error class="error-message" [control]="control"></app-validation-error>
+  }
+</mat-form-field>
+}
